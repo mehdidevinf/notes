@@ -1,0 +1,259 @@
+
+<body>
+  <span style="position: absolute; right: 15px;top: 0px;text-align: center;text-decoration: underline;">
+    <h6>ROYAUME DU MAROC</h6>
+    <h6>MINISTERE DE L'INTERIEUR</h6>
+    <h6>FORCES AUXILIAIRES</h6>
+    <h6>INSPECTION GENERALE DES F.A Z.N</h6>
+  </span>
+  <p class="notes">FEUILLE DE NOTES</p>
+  <p class="notes">Cadre Officiers</p>
+  <p class="notes">Année :{{v.annee}}</p>
+</body>
+
+<p class="titre">I.IDENTIFICATION </p>
+<p-table #dt1 styleClass="p-datatable-sm"  scrollHeight="77vh"
+
+
+  styleClass="table table-striped table-hover " [rows]="10" [globalFilterFields]="['matricule','nom','prenom']">
+  <!-- Ajout de l'année -->
+  <ng-template let-objet let-index="rowIndex" pTemplate="header" let-columns>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom">Prénom et Nom</th>
+
+      <th colspan="2" pSortableColumn="cin">Grade</th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom"> {{v.prenom}} {{v.nom}} </th>
+
+
+      <th colspan="2" pSortableColumn="cin"> {{v.grade}} </th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom">Matricule</th>
+      <th colspan="1" pSortableColumn="cin">Unité d'affectation</th>
+      <th colspan="1" pSortableColumn="cin">Origine et spécialité</th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom">{{v.matricule}}</th>
+
+      <th colspan="1" pSortableColumn="cin">{{v.user.unite}} </th>
+      <th colspan="1" >{{v.origine}}   </th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom">Situation Familiale</th>
+
+      <th colspan="2" pSortableColumn="cin">Date et lieu de naissance </th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom"></th>
+
+      <th colspan="1" pSortableColumn="cin"> {{v.DATENAISS}}</th>
+      <th colspan="1" pSortableColumn="cin">{{v.ville}}</th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="1" pSortableColumn="prenom">Date de recrutement</th>
+      <th colspan="1" pSortableColumn="prenom">Date de nomination au grade actuel</th>
+      <th colspan="1" pSortableColumn="cin">Fonction ou emploi occupé</th>
+      <th colspan="1" pSortableColumn="cin">PTC HOSPITALISATION TRAVAIL AEDENTAIRE </th>
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="1" pSortableColumn="prenom">{{v.DATERECRUTEMENT}}</th>
+
+      <th colspan="1" pSortableColumn="prenom"></th>
+
+      <th colspan="1" pSortableColumn="prenom">{{v.fonctionpfa}}</th>
+
+      <th colspan="1" pSortableColumn="prenom">
+    <tr>
+      <th colspan="1" pSortableColumn="prenom">{{v.PTC}}</th>
+    </tr>
+    </th>
+
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="2" pSortableColumn="prenom">Période de la notation du : {{v.date_debut}}</th>
+
+      <th colspan="2" pSortableColumn="cin">au   :{{v.date_fin}}</th>
+
+    </tr>
+    <tr class="font-size-table">
+
+      <th colspan="1" pSortableColumn="prenom">Disciplinaires:{{v.disciplinaire}} Jrs</th>
+      <th colspan="1" pSortableColumn="prenom">{{v.jugement}}</th>
+      <th colspan="2" pSortableColumn="cin">Félicitations et récompenses:{{v.naturef}} et {{v.autoritef}}</th>
+
+    </tr>
+  </ng-template>
+
+</p-table>
+<p class="titre">II.EVALUATION</p>
+
+<p-table #dt4 styleClass="p-datatable-sm" [value]="v.impressions" scrollHeight="77vh" [(selection)]="v.pfanoteSelected"
+  styleClass="table table-striped table-hover " [rows]="10" [globalFilterFields]="['matricule','nom','prenom']">
+
+  <ng-template pTemplate="header">
+    <tr class="font-size-table">
+      <td colspan="2">
+        <span>Intitulé</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span
+          class="slanted-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Echelle
+          de valeur</span>
+      </td>
+
+      <th height="5">COEF</th>
+      <th height="5">TOTAL</th>
+
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-objet let-index="rowIndex">
+
+    <ng-container *ngIf="objet.intitule == 'Aptitude Physique'">
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==0">
+        <td rowspan="2"> {{objet.intitule}}</td>
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+
+
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==1">
+
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+
+        <td>{{objet.total}}</td>
+      </tr>
+    </ng-container>
+
+    <ng-container *ngIf="objet.intitule == 'Qualités morales'">
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==2">
+        <td rowspan="2"> {{objet.intitule}}</td>
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==3">
+
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+    </ng-container>
+
+    <ng-container *ngIf="objet.intitule == 'Qualités intellectuelles'">
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==4">
+        <td rowspan="3"> {{objet.intitule}}</td>
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==5">
+
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==6">
+
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+    </ng-container>
+
+    <ng-container *ngIf="objet.intitule == 'Qualités professionnelles'">
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 7">
+        <td rowspan="8">{{objet.intitule}}</td>
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 8">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 9">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 10">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 11">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 12">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 13">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 14">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <!-- Répéter pour les index 10 à 14 -->
+    </ng-container>
+
+    <ng-container *ngIf="objet.intitule == 'Rendement dans la fonction occupée'">
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 15">
+        <td rowspan="2">{{objet.intitule}}</td>
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+      <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 16">
+        <td>{{objet.libelle_evaluation}}</td>
+        <td>{{objet.coeffession}}</td>
+        <td>{{objet.total}}</td>
+      </tr>
+    </ng-container>
+
+  </ng-template>
+  <!-- </ng-template> -->
+
+  <ng-template pTemplate="footer">
+    <tr class="font-size-table">
+      <td colspan="2">
+        Total Général
+      </td>
+
+      <td>20</td>
+      <td>{{ calculateTotalNotes() }}</td>
+
+    </tr>
+    <tr class="font-size-table">
+      <td colspan="2">
+        Moyenne Générale sur 20
+      </td>
+
+      <td colspan="2">{{ calculateTotalNotestotal() }}</td>
+
+    </tr>
+  </ng-template>
+
+</p-table>

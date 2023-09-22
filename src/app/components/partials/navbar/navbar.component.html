@@ -1,0 +1,52 @@
+<div  *ngIf="v.loged== true" >
+  <nav  class="navbar navbar-expand-sm navbar-dark bg-primary nav-bar" style="padding-left: 0px;">
+
+     <div class="col-8" style="padding-left: 3px;">
+       <table>
+         <tr>
+           <td>
+            <img class="img-responsive" src="assets/img/logo.png" style="height: 34px;width: 28px; ">
+           </td>
+           <td>
+              <span > <h3>Gestion des Notes PFA</h3></span>
+           </td>
+         </tr>
+       </table>
+
+    </div>
+
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+
+          <ul *ngIf="isLoggedIn$ | async" class="navbar-nav ml-auto">
+
+            <li  class="nav-item" style="text-align: center;"  >
+               <i class='fas fa-user-alt'></i>
+
+              <a   (click)="signOut()"  style="cursor:pointer">
+                 Déconnexion
+              </a>
+
+            </li>
+   </ul>
+
+      </div>
+
+  </nav>
+  <nav class=" bg-danger nav-bar">
+     <div class="row">
+         <div class="col-md-6" style="text-align: left;">
+            <p style="margin-left: 5px;">notation</p>
+         </div>
+         <div class="col-md-6" style="text-align: right;">
+          <!-- <p style="margin-right: 5px;">User: {{v.user.name}} </p> -->
+          <p style="margin-right: 5px;margin-bottom: 0rem;">Utilisateur: {{v.user.login + ' / ' +  v.user.unite  }}  </p>
+      </div>
+     </div>
+  </nav>
+  </div>

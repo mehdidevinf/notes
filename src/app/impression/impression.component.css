@@ -1,0 +1,41 @@
+
+.font-size-table {
+  font-weight: bold;
+  width: 100%;
+  border: none;
+}
+
+.font-size-table th,
+.font-size-table td {
+  padding: 2px;
+  border: none;
+  line-height: 1;
+}
+
+.underline {
+  text-decoration: underline;
+  text-align: right;
+}
+
+.notes {
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.titre {
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.year {
+  font-size: smaller;
+  /* Taille de police plus petite */
+  text-decoration: underline;
+  text-align: right;
+  /* Aligné à droite */
+  margin-top: 0;
+  /* Réduit la marge supérieure pour se rapprocher du paragraphe précédent */
+  text-align: center;
+}

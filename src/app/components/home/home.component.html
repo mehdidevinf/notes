@@ -1,0 +1,124 @@
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+<p-messages [(value)]="msgs" [enableService]="false"></p-messages>
+<p-toast></p-toast>
+<p-toast position="top-center" key="tl"></p-toast>
+<div class="row" style="margin-bottom: 5px;" >
+  <div class="col-8" >
+    <div class="card" style="margin-left: 500px;">
+      <h3 class="card-header" style="text-align:center ;color:blue;" > Creation de Comptes pour accéder aux différents Plateforms</h3>
+      <div class="card-body">
+          <form  [formGroup]="compteForm"  (ngSubmit)="onSubmit()" >
+              <div class="form-group">
+                  <label style="font-size: 16px;">Plateforme</label> <br>
+                  <p-dropdown  [options]="gestions"
+                   formControlName="inputPlateforme"
+                    [(ngModel)]="gestionsSelected"
+                    placeholder="Seléctioner platforme"
+                    optionLabel="libelle"
+                    optionValue="id"
+                    [style]="{'width':'100%','height': '3.5vh'}" [panelStyle]="{'font-size':'15px','width':'60px'}"
+                    (onChange)="filtrerProfil()"
+                    [showClear]="true"></p-dropdown>
+              </div>
+              <div class="form-group">
+                <label style="font-size: 16px;">Profil</label><br>
+               <p-dropdown
+                formControlName="inputProfil"
+                [options]="AppProfils"
+                [(ngModel)]="profilsSelected"
+                placeholder="Seléctioner profil"
+                optionLabel="libelle"
+                [style]="{'width':'100%','height': '3.5vh'}" [panelStyle]="{'font-size':'15px','width':'60px'}"
+                optionValue="id"
+                [showClear]="true"></p-dropdown>
+            </div>
+              <div class="form-group">
+                <label  style="font-size: 16px;">Formation</label><br>
+               <p-dropdown
+               [options]="unites"
+               [(ngModel)]="unitesSelected"
+               formControlName="inputFormation"
+               placeholder="Seléctioner formation"
+               optionLabel="abreviation"
+               [style]="{'width':'100%','height': '3.5vh'}" [panelStyle]="{'font-size':'15px','width':'60px'}"
+               [showClear]="true"
+               optionValue="id"
+               (onChange)="filtrerPfa()"></p-dropdown>
+            </div>
+
+
+            <div class="form-group">
+              <label  style="font-size: 16px;">Matricule</label><br>
+             <p-dropdown [options]="unitePfas"
+             [(ngModel)]="pfasSelected"
+              formControlName="inputMatricule"
+               placeholder="Seléctioner personne"
+                optionLabel="presentation"
+                [style]="{'width':'100%','height': '3.5vh'}" [panelStyle]="{'font-size':'15px','width':'60px'}"
+                [filter]="true"
+                optionValue="id"
+                [showClear]="true"
+                (onChange)="chargerPfa()"></p-dropdown>
+          </div>
+              <div class="form-group" >
+                <label style="font-size: 16px;">Nom user</label>
+                <input disabled="true"
+                 [(ngModel)]="nom"
+                 formControlName="inputNom"
+                 type="text"
+                 class="form-control"
+                 style="font-size: 16px;"  />
+
+            </div>
+            <div class="form-group">
+              <label style="font-size: 16px;">Prénom</label>
+              <input disabled="true"
+                [(ngModel)]="prenom"
+                 formControlName="inputPrenom"
+                  type="text"
+                  class="form-control"
+                   style="font-size: 16px;" />
+
+          </div>
+          <div class="form-group">
+            <label style="font-size: 16px;">Nom d'utilisateur</label>
+            <input disabled="true"
+            [(ngModel)]="nomUser"
+            formControlName="inputUtilisateur"
+             type="text"
+             class="form-control"
+             style="font-size: 16px;"  />
+
+        </div>
+
+              <div class="form-group">
+                  <label style="font-size: 16px;">Mot de passe</label>
+                  <input  [(ngModel)]="motpass"
+                  formControlName="inputMotpass"
+                   type="password"
+                   class="form-control"
+                   style="font-size: 16px;"/>
+                   <small  id="username2-help" class="p-invalid" style="font-size: 100%;">Le mot de passe doit comprendre au moins 6 caractères.</small>
+
+              </div>
+              <div class="form-group">
+                <label  style="font-size: 16px;">Confirmer le Mot de Passe</label>
+                <input formControlName="inputConfirmMotpass"
+                [(ngModel)]="motpass2"
+                type="password"
+                class="form-control"
+                 style="font-size: 16px;" />
+            </div>
+              <div class="form-group">
+                  <button class="btn btn-success" style="margin-left: 650px;" (click)="saveDemande()">
+                      <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
+                      Envoyer
+                  </button>
+
+              </div>
+          </form>
+      </div>
+  </div>
+
+  </div>
+</div>

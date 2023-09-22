@@ -1,0 +1,67 @@
+
+.container{
+     max-width: 100%;
+    width: 100%;
+}
+.ted{
+    width: 80px;
+}
+.titre{
+  width: 300px;
+}
+body {
+    padding: 2em;
+    font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+  }
+.off-sup-cell{
+  background-color: rgb(252, 131, 51);
+  text-align: center;
+}
+.off-sub-cell{
+  background-color: rgb(240, 186, 116);
+  text-align: center;
+}
+.s-off-sup-cell{
+  background-color: rgb(107, 243, 28);
+  text-align: center;
+}
+.s-off-sub-cell{
+  background-color: rgb(182, 236, 93);
+  text-align: center;
+}
+.pdr-cell{
+  background-color: rgb(183, 189, 186);
+  text-align: center;
+}
+.nombre-cell{
+  background-color: rgb(247, 238, 111);
+  text-align: center;
+}
+.thd{
+  text-align: center;
+}
+.th_entite{
+  width: 50%;
+}
+.total-col{
+  background-color:rgb(180, 227, 242);  
+  font-size: larger;
+}
+ 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50px);
+  align-content: center;
+}
+.ted{
+  width: 80px;
+  text-align: center;
+}
+.tedth{ 
+  text-align: center;
+}

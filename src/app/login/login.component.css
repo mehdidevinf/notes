@@ -1,0 +1,18 @@
+.container{
+    /* background-image: url('/assets/img/9.jpg');  */
+}
+.login{
+
+  height: 6em;
+  background-image: url('/assets/img/logo.png');
+  background-repeat: no-repeat;
+}
+.formGroup{
+  text-align: left;
+}
+.divLogo{
+  text-align: left;
+    /* position: absolute;
+    left: 73em;
+    top: 42px; */
+}

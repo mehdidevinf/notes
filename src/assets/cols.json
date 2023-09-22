@@ -1,0 +1,12 @@
+{
+    "data":
+    [
+        { "field": "label", "header": "Entité" },
+        { "field": "off_sup", "header": "OFF SUP" },
+        { "field": "off_sub", "header": "OFF SUB" },
+        { "field": "s_off_sup", "header": "S/OFF SUP" },
+        { "field": "s_off_sub", "header": "S/OFF SUB" },
+        { "field": "pdr", "header": "PDR" }
+    ]
+
+}

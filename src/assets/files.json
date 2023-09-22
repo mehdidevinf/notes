@@ -1,0 +1,1328 @@
+{
+  "data": [
+      {
+          "data": {
+              "id": 227,
+              "label": "SECTION DE COMMANDEMENT",
+              "categorie_grade_id": null,
+              "formation_id": "223",
+              "expandedIcon": "pi pi-caret-down",
+              "collapsedIcon": "pi pi-caret-right"
+          },
+          "children": [
+              {
+                  "data": {
+                      "id": 316,
+                      "label": "COMMANDANT G.P",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 317,
+                      "label": "SECRETAIRE",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 318,
+                      "label": "SECRETAIRE",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 319,
+                      "label": "CONDUCTEUR",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 329,
+                      "label": "CONDUCTEUR",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 324,
+                      "label": "PLANTON DE BUREAU",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 325,
+                      "label": "GENS DE MAISON",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 326,
+                      "label": "AGENT D'EMPLOI (SG)",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 327,
+                      "label": "AGENT D'EMPLOI (S/OSFA)",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 328,
+                      "label": "COIFFEUR",
+                      "categorie_grade_id": null,
+                      "formation_id": "227",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              }
+          ],
+          "expandedIcon": "pi pi-caret-down",
+          "collapsedIcon": "pi pi-caret-right"
+      },
+      {
+          "data": {
+              "id": 228,
+              "label": "DISTRICT (DISTRICT-CERCLE-PACHALIK)",
+              "categorie_grade_id": null,
+              "formation_id": "223",
+              "expandedIcon": "pi pi-caret-down",
+              "collapsedIcon": "pi pi-caret-right"
+          },
+          "children": [
+              {
+                  "data": {
+                      "id": 330,
+                      "label": "COMMANDEMENT",
+                      "categorie_grade_id": null,
+                      "formation_id": "228",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 340,
+                              "label": "CHEF DISTRICT",
+                              "categorie_grade_id": null,
+                              "formation_id": "330",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 411,
+                              "label": "CONDUCTEUR",
+                              "categorie_grade_id": null,
+                              "formation_id": "330",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 341,
+                              "label": "SECRETAIRE",
+                              "categorie_grade_id": null,
+                              "formation_id": "330",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 331,
+                      "label": "PROTECTION",
+                      "categorie_grade_id": null,
+                      "formation_id": "228",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 342,
+                              "label": "CHEF DE GROUPE",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 343,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 344,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 345,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 346,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 347,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 348,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "331",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 332,
+                      "label": "INTERVENTION",
+                      "categorie_grade_id": null,
+                      "formation_id": "228",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 333,
+                      "label": "PREVENTION",
+                      "categorie_grade_id": null,
+                      "formation_id": "228",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              }
+          ],
+          "expandedIcon": "pi pi-caret-down",
+          "collapsedIcon": "pi pi-caret-right"
+      },
+      {
+          "data": {
+              "id": 230,
+              "label": "DETACHEMENT DE COMMANDEMENT",
+              "categorie_grade_id": null,
+              "formation_id": "223",
+              "expandedIcon": "pi pi-caret-down",
+              "collapsedIcon": "pi pi-caret-right"
+          },
+          "children": [
+              {
+                  "data": {
+                      "id": 320,
+                      "label": "COMMANDEMENT",
+                      "categorie_grade_id": null,
+                      "formation_id": "230",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 334,
+                              "label": "CHEF DETACHEMENT",
+                              "categorie_grade_id": null,
+                              "formation_id": "320",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 321,
+                      "label": "PROTECTION",
+                      "categorie_grade_id": null,
+                      "formation_id": "230",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 335,
+                              "label": "CHEF DE GROUPE",
+                              "categorie_grade_id": null,
+                              "formation_id": "321",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 336,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "321",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 337,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "321",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 338,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "321",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 339,
+                              "label": "AGENT DE PROTECTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "321",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 322,
+                      "label": "INTERVENTION",
+                      "categorie_grade_id": null,
+                      "formation_id": "230",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 351,
+                              "label": "CHEF DE GROUPE",
+                              "categorie_grade_id": null,
+                              "formation_id": "322",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 352,
+                              "label": "AGENT D'INTERVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "322",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 353,
+                              "label": "AGENT D'INTERVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "322",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 354,
+                              "label": "AGENT D'INTERVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "322",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 355,
+                              "label": "AGENT D'INTERVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "322",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 356,
+                              "label": "CONDUCTEUR",
+                              "categorie_grade_id": null,
+                              "formation_id": "322",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 323,
+                      "label": "PREVENTION",
+                      "categorie_grade_id": null,
+                      "formation_id": "230",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 357,
+                              "label": "CHEF DE GROUPE",
+                              "categorie_grade_id": null,
+                              "formation_id": "323",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 358,
+                              "label": "AGENT DE PREVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "323",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      },
+                      {
+                          "data": {
+                              "id": 359,
+                              "label": "AGENT DE PREVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "323",
+                              "expandedIcon": "pi pi-circle-on",
+                              "collapsedIcon": "pi pi-circle-on"
+                          },
+                          "children": [],
+                          "expandedIcon": "pi pi-circle-on",
+                          "collapsedIcon": "pi pi-circle-on"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              }
+          ],
+          "expandedIcon": "pi pi-caret-down",
+          "collapsedIcon": "pi pi-caret-right"
+      },
+      {
+          "data": {
+              "id": 349,
+              "label": "ENTITES MONTEES",
+              "categorie_grade_id": null,
+              "formation_id": "223",
+              "expandedIcon": "pi pi-caret-down",
+              "collapsedIcon": "pi pi-caret-right"
+          },
+          "children": [
+              {
+                  "data": {
+                      "id": 350,
+                      "label": "GROUPE D'ESCOUADES A CHEVAL",
+                      "categorie_grade_id": null,
+                      "formation_id": "349",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 360,
+                              "label": "ESCOUADE DE COMMANDEMENT ET DE SOUTIEN",
+                              "categorie_grade_id": null,
+                              "formation_id": "350",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 412,
+                                      "label": "CHEF DE GROUPE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "360",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 361,
+                                      "label": "INFIRMI°VETERINAIRE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "360",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 362,
+                                      "label": "MARECHAL FERRANT",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "360",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      },
+                      {
+                          "data": {
+                              "id": 365,
+                              "label": "1 °ESCOUADE A CHEVAL D'INTERVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "350",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 366,
+                                      "label": "CHEF D'ESCOUADE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 367,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 368,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 369,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 370,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 371,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 372,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "365",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      },
+                      {
+                          "data": {
+                              "id": 375,
+                              "label": "2° ESCOUADE A CHEVAL D'INTERVENTION",
+                              "categorie_grade_id": null,
+                              "formation_id": "350",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 380,
+                                      "label": "CHEF D'ESCOUADE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 381,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 383,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 384,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 385,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 386,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 387,
+                                      "label": "CAVALIER",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "375",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 396,
+                      "label": "PELOTON MOTO",
+                      "categorie_grade_id": null,
+                      "formation_id": "349",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 401,
+                              "label": "EQUIPE MOTO CYCLE",
+                              "categorie_grade_id": null,
+                              "formation_id": "396",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 402,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "401",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 403,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "401",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 404,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "401",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 405,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "401",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      },
+                      {
+                          "data": {
+                              "id": 406,
+                              "label": "EQUIPE MOTO QUAD",
+                              "categorie_grade_id": null,
+                              "formation_id": "396",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 407,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "406",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 408,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "406",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 409,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "406",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 410,
+                                      "label": "PILOTE MOTO",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "406",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              }
+          ],
+          "expandedIcon": "pi pi-caret-down",
+          "collapsedIcon": "pi pi-caret-right"
+      },
+      {
+          "data": {
+              "id": 363,
+              "label": "DETACHEMENT DE PROTECTION ET DE GARDE DES INSTALLATIONS",
+              "categorie_grade_id": null,
+              "formation_id": "223",
+              "expandedIcon": "pi pi-caret-down",
+              "collapsedIcon": "pi pi-caret-right"
+          },
+          "children": [
+              {
+                  "data": {
+                      "id": 364,
+                      "label": "CHEF DETACHEMENT",
+                      "categorie_grade_id": null,
+                      "formation_id": "363",
+                      "expandedIcon": "pi pi-circle-on",
+                      "collapsedIcon": "pi pi-circle-on"
+                  },
+                  "children": [],
+                  "expandedIcon": "pi pi-circle-on",
+                  "collapsedIcon": "pi pi-circle-on"
+              },
+              {
+                  "data": {
+                      "id": 373,
+                      "label": "INSTANCE JUDICIAIRES",
+                      "categorie_grade_id": null,
+                      "formation_id": "363",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 374,
+                              "label": "TRIBUNAL 1° INSTANCE",
+                              "categorie_grade_id": null,
+                              "formation_id": "373",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 376,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "374",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 377,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "374",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 378,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "374",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      },
+                      {
+                          "data": {
+                              "id": 379,
+                              "label": "TRIBUNAL COURS D'APPEL",
+                              "categorie_grade_id": null,
+                              "formation_id": "373",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 388,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "379",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 389,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "379",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 390,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "379",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      },
+                      {
+                          "data": {
+                              "id": 382,
+                              "label": "TRIBUNAL DE LA FAMILLE",
+                              "categorie_grade_id": null,
+                              "formation_id": "373",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 391,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "382",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 392,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "382",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 393,
+                                      "label": "AGENT DE PROTECTION",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "382",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              },
+              {
+                  "data": {
+                      "id": 394,
+                      "label": "OUVRAGES ET EDIFICES PUBLICS",
+                      "categorie_grade_id": null,
+                      "formation_id": "363",
+                      "expandedIcon": "pi pi-caret-down",
+                      "collapsedIcon": "pi pi-caret-right"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "id": 395,
+                              "label": "1° POSTE",
+                              "categorie_grade_id": null,
+                              "formation_id": "394",
+                              "expandedIcon": "pi pi-caret-down",
+                              "collapsedIcon": "pi pi-caret-right"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "id": 397,
+                                      "label": "CHEF DE POSTE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "395",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 398,
+                                      "label": "AGENT DE GARDE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "395",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 399,
+                                      "label": "AGENT DE GARDE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "395",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              },
+                              {
+                                  "data": {
+                                      "id": 400,
+                                      "label": "AGENT DE GARDE",
+                                      "categorie_grade_id": null,
+                                      "formation_id": "395",
+                                      "expandedIcon": "pi pi-circle-on",
+                                      "collapsedIcon": "pi pi-circle-on"
+                                  },
+                                  "children": [],
+                                  "expandedIcon": "pi pi-circle-on",
+                                  "collapsedIcon": "pi pi-circle-on"
+                              }
+                          ],
+                          "expandedIcon": "pi pi-caret-down",
+                          "collapsedIcon": "pi pi-caret-right"
+                      }
+                  ],
+                  "expandedIcon": "pi pi-caret-down",
+                  "collapsedIcon": "pi pi-caret-right"
+              }
+          ],
+          "expandedIcon": "pi pi-caret-down",
+          "collapsedIcon": "pi pi-caret-right"
+      }
+  ]
+}

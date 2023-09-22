@@ -1,0 +1,32 @@
+.container{
+max-width: 100%;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border: 1px solid black; */
+  }
+  th{
+    font-size: 110%;
+  }
+tr{
+  font-size: 100%;
+}
+.fonction-cell{
+  color: red;
+}
+button{
+  height: 74%;
+}
+.tr_edit_article{
+  height: 100px;
+}
+.erreurStyle{
+  color: red;
+}
+.corectStyle{
+  color: black;
+}
+

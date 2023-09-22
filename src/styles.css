@@ -1,0 +1,138 @@
+body{
+  padding: 2rem;
+  font-size: 10px;
+   /* background-image: url('/assets/img/9.jpg');  */
+}
+button{
+  height: 1.99em;
+}
+
+.container-xl {
+  max-width: 100%;
+}
+/* @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap-grid.min.css"); */
+.container, .container-fluid {padding: 0;}
+
+html {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Suffix this section at the end of your styles.css for toogling between @media screen and @media print mode */
+/*############################################################################################################*/
+app-bon-sorite {
+/* hide the printing component from @media screen */
+display: none;
+}
+app-impression {
+  display: none !important;
+  }
+
+@media print {
+/* invert the display (show/hide) properties of the main */
+/* aplication component and the printing component       */
+body {
+height: 100%;
+width: 100%;
+
+}
+
+@page {
+margin: 0;
+}
+@page :left {
+margin-top: 1cm;
+}
+
+@page :right {
+margin-top: 1cm;
+}
+.td_bon{
+font-size: 12 pt;
+}
+.items-group{
+border: none !important;
+border-radius: 0 i !important;
+padding: 0;
+margin: 0;
+}
+
+table{
+width: 100%;
+page-break-inside:auto ;
+border:1px solid black;
+}
+
+tr  { page-break-inside:avoid; page-break-after:auto }
+.table td, .table th {
+background-color: #fff !important;
+padding-left: 3px;
+border: 1px solid black !important;
+}
+
+
+table > tbody > tr > td {
+padding: 3px !important;
+}
+
+.thDesignation{
+width: 25em;
+}
+.thUnite{
+width: 5em;
+text-align: center;
+}
+.thQte{
+width: 5em;
+text-align: center;
+}
+.thNumeroSerie{
+width: 25em;
+word-wrap: anywhere;
+}
+
+
+
+app-sortie {
+  display: none;
+}
+app-facture {
+  display: none;
+}
+app-navbar {
+  display: none;
+}
+app-releve {
+display: none;
+}
+app-credit {
+display: none;
+}
+
+
+app-situation{
+display: none;
+}
+app-entree{
+display: none;
+}
+app-pfa-list{
+  /* display: block; */
+  display: none;
+}
+
+
+app-impression
+{
+  display: block !important;
+  width: 100%;
+}
+
+
+}
+/*#############################################################################################################*/
+
+.button-sortie-detail{
+text-align: right;
+margin-top: 0.4em;
+padding-right: 0px;
+}

@@ -1,0 +1,1148 @@
+
+  <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" ></p-confirmDialog>
+
+<p-messages [(value)]="msgs" [enableService]="false"></p-messages>
+<p-toast></p-toast>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12" style="padding: 2px;">
+
+      <table>
+          <tr>
+
+              <td>
+                <input #searchInput pInputText type="text"
+                    (input)="dt1.filterGlobal($event.target.value, 'contains')"
+                    [style]="{'width': '300px', 'margin-left':'8em'}" placeholder="Recherche par mot clé" />
+            </td>
+<td> <button pButton type="button" label="changer votre mot de passe" (click)="showPass()"></button></td>
+
+          </tr>
+          <td></td> <td></td> <td>
+            <input #searchInput pInputText type="text"
+                (input)="dt2.filterGlobal($event.target.value, 'contains')"
+                [style]="{'width': '300px', 'margin-left':'8em'}" placeholder="Recherche par mot clé" />
+        </td> <td>   <button *ngIf="v.user.profile_id!=0"  pButton pRipple label="Actualiser" icon="pi pi-refresh" class="p-button-secondary p-mr-2" (click)="getPFA_Note()"></button></td>
+      </table>
+
+  </div>
+
+  <div class="row" style="margin-bottom: 10px;">
+    <div class="col-4">
+      <p-table #dt1 styleClass="p-datatable-sm"
+    [value]="pfas"
+    selectionMode="single"
+    [(selection)]="pfaSelected"
+    (onRowSelect)="getPFA_Note()"
+    [scrollable]="true"
+    scrollHeight="77vh"
+    styleClass="table table-striped table-hover "
+    [rows]="10"
+    [paginator]="true"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [globalFilterFields]="['matricule','nom','prenom']">
+    <ng-template pTemplate="header">
+        <tr class="font-size-table">
+            <th pSortableColumn="matricule">Matricule</th>
+            <th pSortableColumn="nom">Nom</th>
+            <th pSortableColumn="prenom">Prenom</th>
+            <!-- <th pSortableColumn="grade">Grade</th> -->
+
+            <th pSortableColumn="cin">Cin</th>
+            <!-- <th pSortableColumn="action">Action</th> -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-objet>
+        <tr *ngIf="objet.deleted_at == null" [pSelectableRow]="objet" class="font-size-table">
+            <td>{{objet.matricule}}</td>
+            <td>{{objet.nom}}</td>
+            <td>{{objet.prenom}}</td>
+            <!-- <td>{{objet.grade}}</td> -->
+
+            <td>{{objet.cin}}</td>
+
+        </tr>
+    </ng-template>
+  </p-table>
+ </div>
+<!-- ------------------------------------------------------pfanote-------------------->
+
+    <div class="col-8" style="display: flex;justify-content: space-between;align-items: top;">
+
+      <p-table #dt2 styleClass="p-datatable-sm"
+      [value]="pfa_note"
+      selectionMode="single"
+      [(selection)]="pfanoteSelected"
+      [scrollable]="true"
+      scrollHeight="77vh"
+      styleClass="table table-striped table-hover "
+      [rows]="10"
+      [paginator]="true"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      [globalFilterFields]="['matricule','nom','prenom']">
+      <ng-template pTemplate="header">
+          <tr class="font-size-table">
+
+              <th pSortableColumn="annee">Annee</th>
+              <th pSortableColumn="note">Note Globale</th>
+              <th pSortableColumn="note">Appréciation</th>
+              <th pSortableColumn="annee">Autorité</th>
+              <th pSortableColumn="unite">Unité</th>
+
+
+              <th pSortableColumn="action">Action</th>
+              <th pSortableColumn=""><button *ngIf="v.user.profile_id==1" pButton pRipple label="Nouveau" icon="pi pi-plus"
+                class="p-button-secondary p-mr-2" style="height: 30px;"
+                (click)="nouvelle_note()"></button> </th>
+  </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-objet>
+          <tr *ngIf="objet.deleted_at == null" [pSelectableRow]="objet" class="font-size-table">
+
+              <td>{{objet.annee}}</td>
+              <td>{{objet.note_globale}}</td>
+              <td>{{objet.appreciation}}</td>
+              <td>{{objet.autorite}}</td>
+              <td>{{ v.user.unite}}</td>
+
+              <td>
+                  <div class="btn-info-general">
+
+
+                    <td>
+                      <div class="btn-info-general">
+
+                        <button *ngIf="v.user.profile_id == 1" pButton pRipple icon="pi pi-file"
+                        class="p-button-rounded p-button-success-button-text" pTooltip="Mise à jour"
+                        (click)="supNote(objet)"></button>
+
+                          <button pButton pRipple icon="pi pi-eye" class="p-button-rounded p-button-secondary"
+                              (click)="showDetails(objet)"></button>
+
+                              <button pButton pRipple icon="pi pi-print" class="p-button-rounded p-button-success"
+                              (click)="printDetails(objet)"></button>
+                      </div>
+                  </td>
+                  </div>
+              </td>
+            <td>
+
+          </tr>
+
+      </ng-template>
+    </p-table>
+
+    </div>
+  </div>
+
+<!------------------------------------------------- sidebar   ajout(principale)------------------------>
+
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="1000" [style]="{width:'82em'}" position="left">
+  <h4 style="font-weight:normal;text-align: center;color: blue;">Nouvelle Note</h4><br><br>
+
+  <table class="navigation nospacing nopadding print_ignore">
+     <tr><td> <tbody>
+      <h4 style="font-weight:normal;text-align: center;color: darkgreen;">Identification</h4>
+      <tr style="height: 40px;">
+        <td>
+          <label style="margin-right: 2px;"> Année : </label>
+        </td>
+        <div class="liste" style="padding-right: 20px;">
+        <td>
+          <select id="annee-select" [(ngModel)]="annee" [style]="{'width':'10em','margin-left':'2px','text-align':'left','color':'Black'}">
+
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+            <option value="2032">2032</option>
+            <option value="2033">2033</option>
+            <option value="2034">2034</option>
+            <option value="2035">2035</option>
+            <option value="2036">2036</option>
+            <option value="2037">2037</option>
+            <option value="2038">2038</option>
+            <option value="2039">2039</option>
+            <option value="2040">2040</option>
+
+          </select>
+        </td></div>
+      </tr>
+
+      <!-- <tr   style="height: 40px;" >
+      <td>
+        <label class="label">Unité :  </label></td>
+      <td  >
+        <div class="liste" style="padding-right: 20px;">
+          <p-dropdown
+          [filter]="true"
+
+          scrollHeight="200px"
+          [style]="{'width':'30em'}"
+          [options]="unites"
+          [(ngModel)]="selectedUnite"
+          optionLabel="libelle"
+
+          placeholder="Unité" >
+        </p-dropdown>
+
+      </div>
+      </td>
+  </tr> -->
+  <!-- <tr> <td>
+    <label class="label">Grade :  </label></td>
+
+    <td>   <p-dropdown [disabled]="pfaSelected == null" placeholder="Choisir le Grade"
+                      formControlName="inputFichNature" [style]="{'width':'95%','height': '4.5vh'}"
+                      [panelStyle]="{'font-size':'15px','width':'80px'}" [filter]="true" [showClear]="true"
+                      scrollHeight="150px" [options]="grades" [(ngModel)]="libelle" optionLabel="libelle"
+                      optionValue="idgrade">
+                    </p-dropdown>
+
+    </td></tr> -->
+ <tr   style="height: 40px;" >
+    <td>
+      <label class="label">Fonction d'autorité :  </label></td>
+    <td  >
+      <div class="liste" style="padding-right: 20px;">
+        <p-dropdown
+        [filter]="true"
+
+        scrollHeight="200px"
+        [style]="{'width':'30em'}"
+        [options]="fonctions"
+        [(ngModel)]="selectedFonction"
+        optionLabel="libelle_fonction"
+
+        placeholder="Fonction" >
+      </p-dropdown>
+
+    </div>
+    </td>
+</tr>
+
+<tr   style="height: 40px;" >
+  <td>
+    <label class="label">Hierarchie d'autorité :  </label></td>
+  <td  >
+    <div class="liste" style="padding-right: 20px;">
+      <p-dropdown
+      [filter]="true"
+      scrollHeight="200px"
+      [style]="{'width':'30em'}"
+      [options]="hierarchies"
+      [(ngModel)]="selectedHierarchie"
+      optionLabel="degre"
+
+      placeholder="Hierarchie" >
+    </p-dropdown>
+
+  </div>
+  </td>
+</tr>
+
+<tr   style="height: 40px;" >
+<td>
+  <label class="label">Appreciation:  </label></td>
+<td  >
+  <div class="liste" style="padding-right: 20px;">
+    <p-dropdown
+    [filter]="true"
+
+    scrollHeight="200px"
+    [style]="{'width':'30em'}"
+    [options]="appreciations"
+    [(ngModel)]="selectedAppreciation"
+    optionLabel="libelle_appreciation"
+
+    placeholder="Appreciation" >
+  </p-dropdown>
+
+</div>
+</td>
+</tr>
+
+<tr style="height: 40px;">
+      <td>
+          <label style="margin-right: 2px;">PTC :</label>
+      </td>
+      <td>
+         <input id="float-input" type="number" pInputText [(ngModel)]="PTC"
+  [style]="{'width':'10em','margin-left':'2px','text-align':'left'}"
+  min="0" max="20" step="1" required [disabled]="isFieldsDisabled">
+
+
+      </td> <td>
+
+        <label style="margin-right: 2px;color:'green'">Jrs </label>
+    </td>
+  </tr>
+  <tr style="height: 40px;">
+    <td>
+        <label style="margin-right: 2px;">HOSP :</label>
+    </td>
+    <td>
+        <input id="float-input" type="number" pInputText [(ngModel)]="HOSP"
+            [style]="{'width':'10em','margin-left':'2px','text-align':'left'}"
+            min="0" max="20" step="1" required [disabled]="isFieldsDisabled">
+
+    </td><td>
+
+      <label style="margin-right: 2px;color:'green'">Jrs</label>
+  </td>
+</tr>
+<tr style="height: 40px;">
+  <td>
+      <label style="margin-right: 2px;">T.S :</label>
+  </td>
+  <td>
+      <input id="float-input" type="number" pInputText [(ngModel)]="TS"
+          [style]="{'width':'10em','margin-left':'2px','text-align':'left'}"
+          min="0" max="20" step="1" required [disabled]="isFieldsDisabled">
+
+  </td><td>
+
+    <label style="margin-right: 2px;color:'green'">Jrs </label>
+</td>
+</tr>
+<tr style="height: 40px;">
+<td>
+  <label class="label">Motif d'établissement:</label>
+</td>
+<td>
+  <div class="liste" style="padding-right: 20px;">
+    <p-dropdown
+      [filter]="true"
+      scrollHeight="200px"
+      [style]="{'width':'30em'}"
+      [options]="motifs"
+      [(ngModel)]="selectedMotif"
+      optionLabel="libellem"
+      optionValue="id"
+      placeholder="Motif" [disabled]="isFieldsDisabled">
+    </p-dropdown>
+  </div>
+</td>
+</tr>
+
+<tr style="height: 40px;">
+
+<td>
+  <label class="label">Période de la notation:</label>
+  <label class="label">Date début:</label>
+</td>
+<td>
+  <input id="date_debut-input" type="date" [(ngModel)]="date_debut"
+    [style]="{'width':'20em','margin-left':'2px','text-align':'left'}"
+    required [disabled]="isFieldsDisabled">
+</td>
+</tr>
+<tr style="height: 40px;">
+<td></td>
+<td>
+  {{ formattedDate }}
+</td>
+</tr>
+<tr style="height: 40px;">
+<td>
+  <label class="label">Date fin:</label>
+</td>
+<td>
+  <input id="date_fin-input" type="date" [(ngModel)]="date_fin"
+    [style]="{'width':'20em','margin-left':'2px','text-align':'left'}"
+    required [disabled]="isFieldsDisabled">
+</td>
+</tr>
+<tr style="height: 40px;">
+<td></td>
+<td>
+  {{ formattedDate }}
+</td>
+</tr>
+
+</tbody>
+</td>
+<td>
+  <tr>
+    <h4 style="font-weight:normal;text-align: center;color: darkgreen;">Sanctions en cours d'année</h4>
+  </tr>
+<tr style="height: 40px;">
+<td>
+    <label style="margin-right: 2px;">Disciplinaire:</label>
+</td>
+<td>
+    <input id="float-input" type="number" pInputText [(ngModel)]="disciplinaire"
+        [style]="{'width':'10em','margin-left':'2px','text-align':'left'}"
+         step="1" required [disabled]="isFieldsDisabled">
+
+</td><td>
+
+  <label style="margin-right: 2px;color:'green'">Jrs </label>
+</td>
+</tr>
+
+
+  <tr style="height: 40px;">
+  <td>
+    <label class="label">Judiciaires :jugement rendu</label>
+  </td>
+  <td>
+    <div class="liste" style="padding-right: 20px;">
+      <p-dropdown
+        [filter]="true"
+        scrollHeight="200px"
+        [style]="{'width':'15em'}"
+        [options]="judiciaires"
+        [(ngModel)]="selectedJudiciaire"
+        optionLabel="jugement"
+        optionValue="id"
+        placeholder="jugement rendu" [disabled]="isFieldsDisabled">
+      </p-dropdown>
+    </div>
+  </td>
+  </tr>
+
+<tr style="height: 40px;">
+  <td>
+    <label class="label">Date jugement:</label>
+  </td>
+  <td>
+    <input id="date_jugement-input" type="date" [(ngModel)]="date_jugement"
+      [style]="{'width':'15em','margin-left':'2px','text-align':'left'}"
+      required [disabled]="isFieldsDisabled">
+  </td>
+
+  </tr><br><br><br>
+  <tr>
+
+    <h4 style="font-weight:normal;text-align: center;color: darkgreen;">Félicitation</h4>
+
+    </tr>
+  <tr style="height: 40px;">
+  <td>
+    <label class="label">Félicitation :Autorite</label>
+  </td>
+  <td>
+    <div class="liste" style="padding-right: 20px;">
+      <p-dropdown
+        [filter]="true"
+        scrollHeight="200px"
+        [style]="{'width':'15em'}"
+        [options]="autoritesf"
+        [(ngModel)]="selectedAutoritef"
+        optionLabel="autorite"
+        optionValue="id"
+        placeholder="autorite" [disabled]="isFieldsDisabled">
+      </p-dropdown>
+    </div>
+  </td>
+  </tr>
+  <tr style="height: 40px;">
+  <td>
+    <label class="label">Félicitation :Nature</label>
+  </td>
+  <td>
+    <div class="liste" style="padding-right: 20px;">
+      <p-dropdown
+        [filter]="true"
+        scrollHeight="200px"
+        [style]="{'width':'15em'}"
+        [options]="naturesf"
+        [(ngModel)]="selectedNaturef"
+        optionLabel="nature"
+        optionValue="id"
+        placeholder="nature" [disabled]="isFieldsDisabled">
+      </p-dropdown>
+    </div>
+  </td>
+  </tr>
+  <tr><br><br><br>
+    <h4 style="font-weight:normal;text-align: center;color: darkgreen;">Evaluation</h4>
+
+  </tr>
+  <tr style="height: 40px;">
+
+    <td>
+  <p-dropdown [disabled]="pfaSelected == null"
+  placeholder="Choisir l'Evaluation"
+  [filter]="true"
+  scrollHeight="200px"
+  [style]="{'width':'15em'}"
+  [options]="evaluations"
+  [(ngModel)]="evaluationSelected"
+  optionLabel="libelle_evaluation"
+  optionValue="id"
+ >
+</p-dropdown>
+
+
+    </td><td>
+
+       <input id="float-input" type="number" pInputText [(ngModel)]="note_evaluation"
+              [style]="{'width':'5em','margin-left':'0px','text-align':'left'}"
+              min="0" max="20" step="0.5" required >
+              <div *ngIf="isNoteInvalid()" class="error" style="color: red;">
+                Veuillez saisir une note valide entre 0 et 20.
+            </div>
+
+  </td>
+    </tr>
+
+      <tr>
+
+  </td>
+</tr>
+
+  </table>
+  ---------------------------------------------------------------------------------<p-button type="button" (click)="saveNotes()" label="Enregistrer" styleClass="p-button-success" ></p-button>
+  <p-button type="button" (click)="visibleSidebar1 = false" label="Annuler" styleClass="p-button-secondary"></p-button>----------------------------------------------------------------------
+  <p-button type="button" (click)="terminer()" label="terminer" styleClass="p-button-info" ></p-button>
+  <p-button type="button" label="Réinitialiser" styleClass="p-button-secondary" (click)="resetForm()"></p-button>
+</p-sidebar>
+
+
+
+<button pButton type="button" icon="pi pi-file-excel" label="Export to Excel" (click)="exportToExcel()"></button>
+
+
+<!----------------------------------------,background:'#E7E7E7'-------------------- sidebar modif------------------------------------------------------------- -->
+<p-sidebar [(visible)]="pfaSidebarmodif" [baseZIndex]="10000"
+[style]="{width:'50em',color:'Black','font-weight':'bold'}">
+
+<h4 style="font-weight:bold;text-align: center;"> Modification</h4>
+<br>
+
+<table class="navigation nospacing nopadding print_ignore" onclick="pfaSidebarmodif = true">
+    <tbody >
+
+
+
+
+<tr style="height: 40px;">
+  <td>
+    <label style="margin-right: 2px;">Evaluation:</label>
+  </td>
+
+
+    <td>
+      <div class="liste" style="padding-right: 28px;">
+        <p-dropdown
+          [filter]="true"
+          scrollHeight="200px"
+          [style]="{'width':'20em'}"
+          [options]="evaluations"
+          [(ngModel)]="evaluationSelected"
+          optionLabel="libelle_evaluation"
+          optionValue="id"
+       >
+        </p-dropdown>
+      </div>
+    </td>
+
+    <tr>
+          <td> <label style="margin-right: 2px;">Note:</label></td>
+    <td><input id="float-input" type="number" pInputText [(ngModel)]="note_evaluation"
+            [style]="{'width':'5em','margin-left':'0px','text-align':'left'}"
+            min="0" max="20" step="0.5" required >
+            <div *ngIf="isNoteInvalid()" class="error" style="color: red;">
+              Veuillez saisir une note valide entre 0 et 20.
+          </div>
+
+</td>
+  </tr>
+
+    <tr style="height: 45px;">
+          <td>
+            <label style="margin-right: 2px;"> Année : </label>
+          </td>
+          <td>
+            <select id="annee-select" [(ngModel)]="annee" [style]="{'width':'10em','margin-left':'2px','text-align':'left','color':'Black'}">
+
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+      <option value="2029">2029</option>
+      <option value="2030">2030</option>
+      <option value="2031">2031</option>
+      <option value="2032">2032</option>
+      <option value="2033">2033</option>
+      <option value="2034">2034</option>
+      <option value="2035">2035</option>
+      <option value="2036">2036</option>
+      <option value="2037">2037</option>
+      <option value="2038">2038</option>
+      <option value="2039">2039</option>
+      <option value="2040">2040</option>
+              <!-- Ajoutez ici les autres options de l'année -->
+            </select>
+          </td>
+        </tr>
+        <tr   style="height: 40px;" >
+          <td>
+            <label class="label">Appreciation:  </label></td>
+          <td  >
+            <div class="liste" style="padding-right: 20px;">
+              <p-dropdown
+              [filter]="true"
+
+              scrollHeight="200px"
+              [style]="{'width':'30em'}"
+              [options]="appreciations"
+              [(ngModel)]="selectedAppreciation"
+              optionLabel="libelle_appreciation"
+
+            >
+            </p-dropdown>
+
+          </div>
+          </td>
+          </tr>
+
+
+</tbody>
+</table>
+<div>
+<br><br><br>
+<div [style]="{'float':'right','width':'auto','margin-left':'2px','text-align':'center'}">
+  <p-button type="button" (click)="saveNote()" label="Enregistrer" styleClass="p-button-success" ></p-button>
+  <!-- <p-button type="button" (click)="visibleSidebar1 = false" label="Cancel" styleClass="p-button-secondary"></p-button> -->
+
+</div>
+</div>
+</p-sidebar>
+
+
+<!----------------------------------------,background:'#E7E7E7'-------------------- sidebar Ajoute 2------------------------------------------------------------- -->
+<p-sidebar [(visible)]="pfaSidebarajout" [baseZIndex]="10000"
+[style]="{width:'50em',color:'Black','font-weight':'bold'}">
+<h4 style="font-weight:bold;text-align: center;">Saisie / Ajout</h4>
+<br>
+<table class="navigation nospacing nopadding print_ignore" onclick="pfaSidebarajout = true">
+    <tbody>
+
+      <tr style="height: 45px;">
+        <td>
+            <label style="margin-right: 2px;"> Matricule : </label>
+        </td>
+        <td>
+            <input id="float-input" type="text" pInputText [(ngModel)]="matricule"
+               disabled="true" [style]="{'width':'30em','margin-left':'2px','text-align':'left','color':'Black'}">
+        </td>
+    </tr>
+
+<tr style="height: 45px;">
+      <td>
+          <label style="margin-right: 2px;"> Nom : </label>
+      </td>
+      <td>
+          <input id="float-input" type="text" pInputText [(ngModel)]="nom"
+          disabled="true" [style]="{'width':'30em','margin-left':'2px','text-align':'left','color':'Black'}">
+      </td>
+  </tr>
+
+  <tr style="height: 45px;">
+    <td>
+        <label style="margin-right: 2px;"> Prenom : </label>
+    </td>
+    <td>
+        <input id="float-input" type="text" pInputText [(ngModel)]="prenom"
+        disabled="true"  [style]="{'width':'30em','margin-left':'2px','text-align':'left','color':'Black'}">
+    </td>
+</tr>
+<tr style="height: 45px;">
+  <td>
+    <label style="margin-right: 2px;"> Année : </label>
+  </td>
+  <td>
+    <select id="annee-select" [style]="{'width':'30em','margin-left':'2px','text-align':'left','color':'Black'}" [(ngModel)]="annee">
+
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+      <option value="2029">2029</option>
+      <option value="2030">2030</option>
+      <option value="2031">2031</option>
+      <option value="2032">2032</option>
+      <option value="2033">2033</option>
+      <option value="2034">2034</option>
+      <option value="2035">2035</option>
+      <option value="2036">2036</option>
+      <option value="2037">2037</option>
+      <option value="2038">2038</option>
+      <option value="2039">2039</option>
+      <option value="2040">2040</option>
+
+      <!-- Ajoutez ici les autres options de l'année -->
+    </select>
+  </td>
+</tr>
+
+              <tr style="height: 40px;">
+                <td>
+                    <label style="margin-right: 2px;">Note :</label>
+                </td>
+                <td>
+                    <input id="float-input" type="number" pInputText [(ngModel)]="note_globale"
+                        [style]="{'width':'30em','margin-left':'2px','text-align':'left'}"
+                        min="0" max="20" step="0.01" required>
+                        <div *ngIf="isNoteInvalid()" class="error" style="color: red;">
+                          Veuillez saisir une note valide entre 0 et 20.
+                      </div>
+
+                </td>
+            </tr>
+        <tr style="height: 40px;">
+          <td>
+              <label style="margin-right: 2px;"> Appreciation : </label>
+          </td>
+
+      </tr>
+<tr> <td>
+  <label class="label">Grade :  </label></td>
+
+  <td>   <p-dropdown [disabled]="pfaSelected == null" placeholder="Choisir le Grade"
+                    formControlName="inputFichNature" [style]="{'width':'95%','height': '4.5vh'}"
+                    [panelStyle]="{'font-size':'15px','width':'80px'}" [filter]="true" [showClear]="true"
+                    scrollHeight="150px" [options]="grades" [(ngModel)]="libelle" optionLabel="libelle"
+                    optionValue="idgrade">
+                  </p-dropdown>
+
+  </td></tr>
+
+</tbody>
+</table>
+<div>
+<br><br><br>
+<div [style]="{'float':'right','width':'auto','margin-left':'2px','text-align':'center'}">
+  <p-button type="button" (click)="saveNotes()" label="Enregistrer" styleClass="p-button-success" ></p-button>
+  <p-button type="button" (click)="visibleSidebar1 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+
+
+
+</div>
+</div>
+</p-sidebar>
+
+<!-- --------imp -->
+
+
+<p-sidebar [(visible)]="visibleSidebarimp" [baseZIndex]="1000" [style]="{width:'80em'}" position="right">
+  <h4 style="font-weight:bold;text-align: left;text-decoration: underline;">Evaluation</h4>
+  <br><br>
+  <div class="col-12" style="display: flex;justify-content: space-between;align-items: top;">
+
+
+    <p-table #dt4 styleClass="p-datatable-sm"
+    [value]="v.pfa_notemats"
+    [scrollable]="true"
+    scrollHeight="77vh"
+    [rows]="10"
+    [paginator]="false"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [globalFilterFields]="['matricule','nom','prenom']">
+    <ng-template pTemplate="header">
+        <tr class="font-size-table">
+          <td colspan="2">
+            <span>Intitulé</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="slanted-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Echelle de valeur</span>
+        </td>
+
+      <th height="5" >COEF</th>
+      <th height="5">TOTAL</th>
+
+</tr>
+    </ng-template>
+          <ng-template pTemplate="body" let-objet let-index="rowIndex">
+              <ng-container *ngIf="objet.intitule == 'Aptitude Physique'" >
+                <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==0">
+                  <td rowspan="3"> {{objet.intitule}}</td>
+                  <td>{{objet.libelle_evaluation}}</td>
+                  <td>{{objet.coeffession}}</td>
+                  <td>{{objet.total}}</td>
+              </tr>
+                <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==1">
+
+                  <td>{{objet.libelle_evaluation}}</td>
+                  <td>{{objet.coeffession}}</td>
+                  <td>{{objet.total}}</td>
+              </tr>
+        </ng-container>
+        <ng-container *ngIf="objet.intitule == 'Qualités morales'" >
+           <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==2">
+            <td rowspan="2"> {{objet.intitule}}</td>
+            <td>{{objet.libelle_evaluation}}</td>
+            <td>{{objet.coeffession}}</td>
+            <td>{{objet.total}}</td>
+        </tr>
+           <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==3">
+
+            <td>{{objet.libelle_evaluation}}</td>
+            <td>{{objet.coeffession}}</td>
+            <td>{{objet.total}}</td>
+        </tr>
+   </ng-container>
+        <ng-container *ngIf="objet.intitule == 'Qualités intellectuelles'" >
+           <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==4">
+            <td rowspan="3"> {{objet.intitule}}</td>
+            <td>{{objet.libelle_evaluation}}</td>
+            <td>{{objet.coeffession}}</td>
+            <td>{{objet.total}}</td>
+        </tr>
+           <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==5">
+
+            <td>{{objet.libelle_evaluation}}</td>
+            <td>{{objet.coeffession}}</td>
+            <td>{{objet.total}}</td>
+        </tr>
+           <tr  [pSelectableRow]="objet" class="font-size-table" *ngIf="index ==6">
+
+            <td>{{objet.libelle_evaluation}}</td>
+            <td>{{objet.coeffession}}</td>
+            <td>{{objet.total}}</td>
+        </tr>
+   </ng-container>
+ <ng-container *ngIf="objet.intitule == 'Qualités professionnelles'">
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 7">
+      <td rowspan="8">{{objet.intitule}}</td>
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 8">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 9">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 10">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 11">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 12">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 13">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 14">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <!-- Répéter pour les index 10 à 14 -->
+  </ng-container>
+  <ng-container *ngIf="objet.intitule == 'Rendement dans la fonction occupée'">
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 15">
+      <td rowspan="2">{{objet.intitule}}</td>
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+    <tr [pSelectableRow]="objet" class="font-size-table" *ngIf="index == 16">
+      <td>{{objet.libelle_evaluation}}</td>
+      <td>{{objet.coeffession}}</td>
+      <td>{{objet.total}}</td>
+    </tr>
+  </ng-container>
+</ng-template>
+    <!-- </ng-template> -->
+
+    <ng-template pTemplate="footer">
+      <tr class="font-size-table">
+        <td colspan="2">
+          Total Général
+      </td>
+
+<td>20</td>
+
+
+</tr>
+<tr class="font-size-table">
+  <td colspan="2">
+    Moyenne Générale sur 20
+</td>
+
+
+
+</tr>
+  </ng-template>
+
+  </p-table>
+
+  </div><br><br>
+  <button pButton type="button"   (click)="imprimerNote()" icon="pi pi-file-excel" label="Imprimer"></button>
+</p-sidebar>
+
+
+<p-dialog [(visible)]="dialogChangePassword" [modal]="true" [responsive]="true" [style]="{ width: '50vw' }" header="Changement de mot de passe">
+  <div class="row">
+    <div class="col">
+      <table class="navigation nospacing nopadding print_ignore">
+        <tbody class="password-table">
+          <tr style="height: 54px">
+            <td>
+              <label style="margin-right: 2px;color: black; width: 10vw">
+                Ancien mot de passe
+              </label>
+            </td>
+            <td>
+              <div class="liste" style="padding-right: 20px">
+                <input
+                  type="password"
+                  pInputText
+                  [(ngModel)]="oldPassword"
+                  [style]="{
+                    width: '19vw',
+                    'margin-left': '2px',
+                    'text-align': 'left'
+                  }"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 54px">
+            <td>
+              <label style="margin-right: 2px; color: black;"> Nouveau mot de passe </label>
+            </td>
+            <td>
+              <div class="liste" style="padding-right: 20px">
+                <input
+                  type="password"
+                  pInputText
+                  [(ngModel)]="newPassword1"
+                  [style]="{
+                    width: '19vw',
+                    'margin-left': '2px',
+                    'text-align': 'left'
+                  }"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 54px">
+            <td>
+              <label style="margin-right: 2px; color: black;"
+                >Confirmer nouveau mot de passe
+              </label>
+            </td>
+            <td>
+              <div class="liste" style="padding-right: 20px">
+                <input
+                  type="password"
+                  pInputText
+                  [(ngModel)]="newPassword2"
+                  [style]="{
+                    width: '19vw',
+                    'margin-left': '2px',
+                    'text-align': 'left'
+                  }"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 54px">
+            <td></td>
+            <td>
+              <div class="liste" style="padding-right: 20px">
+                <span style="color: red;font-size: 12px;"> {{ erreur }}</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row" style="height: 5em"></div>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button
+      (click)="dialogChangePassword = false"
+      label="Annuler"
+      styleClass="p-button-danger"
+      icon="pi pi-times"
+    ></p-button>
+    <p-button
+      icon="pi pi-check"
+      (click)="updatePassword()"
+      label="Enregistrer"
+      styleClass="p-button-success"
+    ></p-button>
+  </ng-template>
+
+</p-dialog>
+
+    <!-- Ajoutez ici les détails de l'objet -->
+
+
+<p-dialog [(visible)]="displayDialog" [modal]="true" [responsive]="true" [style]="{ width: '50vw' }">
+  <ng-template pTemplate="header">
+    <h4 style="color: rgb(26, 45, 131)">Détails</h4>
+  </ng-template>
+
+
+    <!-- Ajoutez ici les détails de l'objet -->
+    <table>
+      <tr>
+        <td>Annee:</td>
+        <td style="color: red;">{{ pfanoteSelected?.annee }}</td>
+      </tr>
+
+      <tr>
+        <td>Appréciation:</td>
+        <td style="color: orange;">{{ pfanoteSelected?.appreciation }}</td>
+      </tr>
+      <tr>
+        <td>notes et evaluations:</td>
+        <td style="color: green;">{{ pfanoteSelected?.notes_and_evaluations }}</td>
+      </tr>
+      <tr>
+        <td>Note générale:</td>
+         <td style="color: red;"><h4> {{ pfanoteSelected?.note_globale }} /20</h4></td>
+      </tr>
+      <tr>
+      <!-- Ajoutez les nouveaux champs ici -->
+      <tr>
+        <td>Unité:</td>
+        <td style="color: orange;">{{ v.user.unite}}</td>
+      </tr>
+      <tr>
+        <td>Fonction d'autorité:</td>
+        <td style="color: green;">{{ pfanoteSelected?.fonction }}</td>
+      </tr>
+      <tr>
+        <td>Hierarchie d'autorité:</td>
+        <td style="color: red;">{{ pfanoteSelected?.degre }}</td>
+      </tr>
+
+      <tr>
+        <td>PTC:</td>
+        <td style="color: orange;">{{ pfanoteSelected?.PTC }}</td>
+      </tr>
+      <tr>
+        <td>HOSP:</td>
+        <td style="color: red;">{{ pfanoteSelected?.HOSP }}</td>
+      </tr>
+      <tr>
+        <td>T.S:</td>
+        <td style="color: orange;">{{ pfanoteSelected?.TS }}</td>
+      </tr>
+      <tr>
+        <td>Sanctions en cours d'année (Disciplinaire):</td>
+        <td style="color: green;">{{ pfanoteSelected?.disciplinaire }}</td>
+      </tr>
+      <tr>
+        <td>Sanctions en cours d'année (Judiciaire):</td>
+        <td style="color: red;">{{ pfanoteSelected?.jugement }}</td>
+      </tr>
+      <tr>
+        <td>Motif :</td>
+        <td style="color: orange;">{{ pfanoteSelected?.motif }}</td>
+      </tr>
+
+       <tr>
+        <td>Nature (Félicitation et récompenses):</td>
+        <td style="color: green;">{{ pfanoteSelected?.nature }}</td>
+      </tr>
+       <tr>
+        <td>Autorité (Félicitation et récompenses):</td>
+        <td style="color: green;">{{ pfanoteSelected?.autorite }}</td>
+      </tr>
+    </table>
+
+
+  <ng-template pTemplate="footer">
+    <button pButton type="button" label="Fermer" (click)="displayDialog = false"></button>
+    <button pButton type="button" icon="pi pi-file-excel" label="Imprimer" ></button>
+  </ng-template>
+</p-dialog>
+<!-- ----------------------- suppresision des notes -->
+
+<p-sidebar [(visible)]="visibleSidebarsup" [baseZIndex]="1000" [style]="{width:'80em'}" position="right">
+  <h4 style="font-weight:normal;text-align: center;color: blueviolet;">Mise à jour des notes et évaluations</h4><br><br>
+  <div class="col-12" style="display: flex;justify-content: space-between;align-items: top;">
+
+    <p-table #dt3 styleClass="p-datatable-sm"
+    [value]="v.pfa_notemats"
+    selectionMode="single"
+    [(selection)]="pfanoteSelected"
+
+    [scrollable]="true"
+    scrollHeight="77vh"
+    styleClass="table table-striped table-hover "
+    [rows]="10"
+    [paginator]="true"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [globalFilterFields]="['matricule','nom','prenom']">
+    <ng-template pTemplate="header">
+        <tr class="font-size-table">
+
+            <th pSortableColumn="annee">année</th>
+            <th pSortableColumn="note">évaluation</th>
+            <th pSortableColumn="note">note évaluation</th>
+            <th pSortableColumn="note">appréciation</th>
+           <th pSortableColumn="action">supprimer</th>
+           <th pSortableColumn="action">éditer</th>
+
+</tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-objet>
+        <tr *ngIf="objet.deleted_at == null" [pSelectableRow]="objet" class="font-size-table">
+
+            <td>{{objet.annee}}</td>
+            <td>{{objet.libelle_evaluation}}</td>
+            <td>{{objet.note_evaluation}}</td>
+            <td>{{objet.appreciation}}</td>
+
+                  <td>
+
+              <button *ngIf="v.user.profile_id==1" pButton pRipple icon="pi pi-trash"
+                            class="p-button-rounded p-button-danger p-button-text" pTooltip="Supprimer"
+                            (click)="deleteNote(objet)"></button>
+
+                </td>
+                <td>
+
+                  <button *ngIf="v.user.profile_id==1" pButton pRipple icon="pi pi-pencil"
+                              class="p-button-secondary p-mr-2" style="height: 30px;"
+                              (click)="editNote(objet)"></button>
+
+
+          </td>
+
+        </tr>
+
+    </ng-template>
+  </p-table>
+
+  </div>
+
+  <p-button type="button"  label="terminer" styleClass="p-button-secondary">
+<!-- table.component.html -->
+
+<!-- <app-impression></app-impression> -->
